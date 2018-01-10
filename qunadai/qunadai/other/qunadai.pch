@@ -1,0 +1,198 @@
+//
+//  qunadai.pch
+//  qunadai
+//
+//  Created by wang on 17/3/15.
+//  Copyright © 2017年 shanghai GeYu Info Tech Co,.Ltd. All rights reserved.
+//
+
+#ifndef qunadai_pch
+#define qunadai_pch
+
+//此处引入第三方库的头文件
+#import <AFNetworking.h>
+#import <UIButton+WebCache.h>
+#import <UIImageView+WebCache.h>
+#import <MJRefresh.h>
+#import <Masonry.h>
+#import <YTKNetwork.h>
+#import "TalkingData.h"
+#import "WXApi.h"
+#import <POP.h>
+
+//#import <GRStarsView.h>
+
+
+#import "UIView+Additions.h"
+#import "NSString+Additions.h"
+#import "Toast+UIView.h"
+#import "WHTool.h"
+#import "WHLoading.h"
+#import "WHRefreshHeader.h"
+#import "WHRefreshFooter.h"
+#import "WHOopsView.h"
+#import "QNDRequest.h"
+//此处定义全局define
+
+#define APPStoreId @"1296715203"
+
+//魔蝎定义
+#if DEBUG
+#define MXApiKey @"3ef6ede77e524c038765a874e95ce2ad" //魔蝎测试key
+#else
+#define MXApiKey @"191424e222e54baf8ec241394f8882f9" //魔蝎正式key
+#endif
+
+//cpl测试的appid和secret，baseUrl,token
+#if DEBUG
+#define CPLAPPID @"ae63f230969f11e7af100cc47a578ff0"
+#define CPLAPPSecret @"sfe023f_9fd&fwfl"
+#define CPLBaseUrl @"https://ssppoc.lianzi360.com"
+#else
+#define CPLAPPID @"2e42d3039e34942660c75aea99fa640e"//正式
+#define CPLAPPSecret @"768d9981b0063180"
+#define CPLBaseUrl @"https://sspprod.lianzi360.com"
+#endif
+
+
+#define CPLUserToken @"cplUserToken"
+#define KGetCPLTOKEN [[NSUserDefaults standardUserDefaults] objectForKey:CPLUserToken]
+
+//判断是否获取cpl的token
+#define KCPLLOGIN  @"CplLogin"
+#define KNEEDCPLLOGIN  [[[NSUserDefaults standardUserDefaults] objectForKey:KCPLLOGIN] boolValue]
+
+//用户ID,您APP中用以识别的用户ID
+#define MXUserID [[NSUserDefaults standardUserDefaults] objectForKey:KUserPhoneNum]
+
+//微信的key和secret
+#define WXAppId @"wx84f7d63c1ace59c6"
+#define WXAppSecret @"b626c56e9eb290ea4c9c966497551a65"
+
+//极光推送Key和secret
+
+#define JPUSHAPPKEY @"71b78ad4d7b73a7568c58924"
+#define JPUSHSecret @"4c75462a565955e0b6dff58e"
+
+//通知状态
+#define KNOTIFICATION_LOGINCHANGE @"loginStateChange" //登录状态
+#define KNOTIFICATION_LOGOUT @"logOut"
+#define KNOTIFICATION_SUCCESS @"versonSuccess"
+#define KNOTIFICATION_APPLICATION @"haveNewApplicationNotification"
+#define KHASLOADED @"hasLoaded" //已经登陆过了
+#define KFROMGUIDEVC @"hadFromGuideVC" //从引导页过来的事件
+
+#define  ViewHeight [[UIScreen mainScreen] bounds].size.height
+#define  ViewWidth [[UIScreen mainScreen] bounds].size.width
+
+#define BaseUrl @"https://app-sit.qunadai.com:8443/appweb/ws/rest"
+
+//#define BaseUrl @"https://mapit.qunadai.com" //预发布环境
+
+//#define BaseUrl @"https://mapi.qunadai.com" //正式环境
+
+/////////////////////////////////////////////////////////////////////////////////////////
+//#define WYBaseUrl @"http://192.168.21.230:8080/"
+
+#define WYBaseUrl @"https://wap-sit.qunadai.com:8443/"
+
+#define KVERSONKEY @"qunadai_ios_1.5"
+
+//用户相关
+
+#define KUserId @"QunadaiUserId"
+#define KUserToken @"QunadaiUserToken"
+#define KPassword @"QunadaiPassword"
+#define KUserPhoneNum @"qunadaiUserPhone"
+
+#define KGetACCESSTOKEN [[NSUserDefaults standardUserDefaults] objectForKey:KUserToken]
+
+#define KGetUserID [[NSUserDefaults standardUserDefaults] objectForKey:KUserId]
+
+#define KGetQNDPHONENUM [[NSUserDefaults standardUserDefaults] objectForKey:KUserPhoneNum]
+//页面需求
+
+#define KIOS11Later  [[[UIDevice currentDevice] systemVersion] floatValue] > 10.4 ? YES : NO
+
+#define KHadBrowsedLatestProducts @"hadBrowsedLatestProducts"
+#define KCustomerServiceHotline @"customerServiceHotline"//客服热线
+#define KBussContact @"bussContact" //商务联系
+
+
+#define KWHSUCCESS [[[NSUserDefaults standardUserDefaults] objectForKey:@"isToSubmit"] boolValue]
+
+#define KFirstTime @"isFirstTimeInApp"
+
+#define KPersonValue @"500"
+
+//安全距离适配
+#define VIEWSAFEAREAINSETS(view) ({UIEdgeInsets i; if(@available(iOS 11.0, *)) {i = view.safeAreaInsets;} else {i = UIEdgeInsetsZero;} i;})
+
+//app颜色设置
+
+#define QNDRGBColor(r,g,b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1.0]
+
+#define ThemeColor [UIColor colorWithRed:238.0/255.0 green:100.0/255.0 blue:43.0/255.0 alpha:1.0]//主题红
+
+#define QNDListDetailLabelGrayColor [UIColor colorWithRed:181.0/255.0 green:188.0/255.0 blue:204.0/255.0 alpha:1.0]//产品列表上的文字颜色
+
+#define QNDAssistText153Color  [UIColor colorWithRed:153.0/255.0 green:153.0/255.0 blue:153.0/255.0 alpha:1.0]//辅助文字信息
+
+#define QNDUnSelectedText195Color  [UIColor colorWithRed:195.0/255.0 green:195.0/255.0 blue:195.0/255.0 alpha:1.0]//未选中文字信息
+
+#define QNDNomalText109Color  [UIColor colorWithRed:109.0/255.0 green:109.0/255.0 blue:109.0/255.0 alpha:1.0]//普通段落文字信息
+
+#define lightGrayBackColor [UIColor colorWithRed:242.0/255.0 green:242.0/255.0 blue:242.0/255.0 alpha:1.0]//分割线颜色
+
+
+
+
+#define BottomThemeColor [UIColor colorWithRed:248.0/255.0 green:187.0/255.0 blue:46.0/255.0 alpha:1.0] //主题黄
+
+//浅色背景色
+#define grayBackgroundLightColor [UIColor colorWithRed:246.0/255.0 green:246.0/255.0 blue:246.0/255.0 alpha:1.0]
+//灰色，主要用于稍深背景
+#define grayBackgroundDarkColor [UIColor colorWithRed:238.0/255.0 green:238.0/255.0 blue:238.0/255.0 alpha:1.0]
+
+
+//默认不能点击按钮的背景色
+#define defaultGrayBackGroundColor [UIColor colorWithRed:223.0/255.0 green:223.0/255.0 blue:223.0/255.0 alpha:1.0]
+
+#define defaultPlaceHolderColor [UIColor colorWithRed:191.0/255.0 green:191.0/255.0 blue:191.0/255.0 alpha:1.0]
+
+#define defultYellowlabelColor [UIColor colorWithRed:242.0/255.0 green:142.0/255.0 blue:56.0/255.0 alpha:1.0] //文字黄
+
+#define black74TitleColor [UIColor colorWithRed:74.0/255.0 green:74.0/255.0 blue:74.0/255.0 alpha:1.0]
+#define black31TitleColor [UIColor colorWithRed:31.0/255.0 green:34.0/255.0 blue:38.0/255.0 alpha:1.0]
+#define blackTitleColor  [UIColor colorWithRed:53.0/255.0 green:53.0/255.0 blue:53.0/255.0 alpha:1.0]
+
+//log设置
+#if DEBUG
+#define WHString [NSString stringWithFormat:@"%s", __FILE__].lastPathComponent
+#define WHLog(...) printf("%s 第%d行: %s\n\n",[WHString UTF8String] ,__LINE__, [[NSString stringWithFormat:__VA_ARGS__] UTF8String]);
+
+#else
+#define WHLog(...)
+#endif
+
+//设置通知
+#define NOTIF_ADD(n, f)     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(f) name:n object:nil]
+#define NOTIF_POST(n, o)    [[NSNotificationCenter defaultCenter] postNotificationName:n object:o]
+#define NOTIF_REMV()        [[NSNotificationCenter defaultCenter] removeObserver:self]
+
+#define NOTIF_REMVWITHNAME(n)  [[NSNotificationCenter defaultCenter] removeObserver:self name:n object:nil];
+
+
+//设置format
+#define FORMAT(f, ...)      [NSString stringWithFormat:f, ## __VA_ARGS__]
+
+//app字体设置
+
+#define QNDFont(a) (([[[UIDevice currentDevice] systemVersion] floatValue] >=9.0)? ([UIFont fontWithName:@"PingFangSC-Regular" size:a]):([UIFont fontWithName:@".PingFang-SC-Light" size:a]))
+
+#define WHWeakObj(o) autoreleasepool{} __weak typeof(o) Weak##o = o;
+#define WHStrongObj(o) autoreleasepool{} __strong typeof(o) Strong##o = Weak##o;
+
+
+#endif
+/* qunadai_pch */

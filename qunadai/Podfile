@@ -1,0 +1,42 @@
+# Uncomment the next line to define a global platform for your project
+ platform :ios, '9.0'
+
+  target 'qunadai' do
+  pod 'AFNetworking' do
+  end
+  pod 'SDWebImage' do
+  end
+  pod 'Masonry' do
+  end
+  pod 'MJRefresh' do
+  end
+  pod 'YTKNetwork' do
+  end
+  pod "MBProgressHUD" do
+  end
+  pod "Bugly" do
+  end
+  pod "Bugtags" do
+  end
+  pod "AvoidCrash" do
+  end
+  pod "YYText" do
+  end 
+  pod "SVProgressHUD" do
+  end
+  pod "pop" do
+  end
+  pod "TZImagePickerController" do
+  end
+  pod "FMDB" do
+  end     
+  pod "JPush" do
+  end   
+
+
+  target 'qunadaiTests' do
+  end
+
+  target 'qunadaiUITests' do
+ end
+end

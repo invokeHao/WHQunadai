@@ -1,0 +1,78 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - AvoidCrash (1.6.7)
+  - Bugly (2.4.7)
+  - Bugtags (2.2.2):
+    - Bugtags/Core (= 2.2.2)
+  - Bugtags/Core (2.2.2)
+  - FMDB (2.7.2):
+    - FMDB/standard (= 2.7.2)
+  - FMDB/standard (2.7.2)
+  - JCore (1.1.5)
+  - JPush (3.0.6):
+    - JCore (~> 1.1.1)
+  - Masonry (1.0.2)
+  - MBProgressHUD (1.0.0)
+  - MJRefresh (3.1.12)
+  - pop (1.0.10)
+  - SDWebImage (4.0.0):
+    - SDWebImage/Core (= 4.0.0)
+  - SDWebImage/Core (4.0.0)
+  - SVProgressHUD (2.1.2)
+  - TZImagePickerController (1.8.8)
+  - YTKNetwork (2.0.3):
+    - AFNetworking (~> 3.0)
+  - YYText (1.0.7)
+
+DEPENDENCIES:
+  - AFNetworking
+  - AvoidCrash
+  - Bugly
+  - Bugtags
+  - FMDB
+  - JPush
+  - Masonry
+  - MBProgressHUD
+  - MJRefresh
+  - pop
+  - SDWebImage
+  - SVProgressHUD
+  - TZImagePickerController
+  - YTKNetwork
+  - YYText
+
+SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  AvoidCrash: 74136074de17bde312719c0b44fa0c9b26a4b652
+  Bugly: 2c256069145f550171907c5cb1c0f84ad291f6c1
+  Bugtags: bc4e3f55ee72b859380c3b298431dbd4b4075818
+  FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
+  JCore: 9bd9c770c877c583d98b90a68792b8361974c231
+  JPush: c41be50eb1a574a66aeb68d237f00a4ec6ec3a82
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
+  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
+  TZImagePickerController: 5d2085b9a749210c3552d35ebe17a6a679438708
+  YTKNetwork: c4b0c29c9d639dc050d475de69ee626d53eac598
+  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
+
+PODFILE CHECKSUM: af9381c2c58ab8267c1e54e095559f70e23311e7
+
+COCOAPODS: 1.2.0
